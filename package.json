@@ -37,7 +37,7 @@
     "postcss-loader": "^4.1.0",
     "postcss-preset-env": "^6.7.0",
     "resolve-url-loader": "^3.1.2",
-    "sass": "^1.32.4",
+    "sass": "^1.49.7",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^5.1.1",
@@ -47,8 +47,11 @@
     "webpack-merge": "^5.7.3"
   },
   "dependencies": {
+    "axios": "^0.25.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^6.2.1",
+    "router-dom": "^2.2.9"
   }
 }

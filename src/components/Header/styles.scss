@@ -1,0 +1,44 @@
+@use 'src/styles/vars';
+
+.header {
+  h1 {
+    font-size: 3.3rem;
+    text-shadow: 2px 3px 0px vars.$color-1;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+  nav {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-size: 1.3rem;
+
+    ul {
+      display: flex;
+
+      a {
+        text-decoration: none;
+        color: vars.$white;
+        border-radius: 10px;
+        width: 102px;
+        text-align: center;
+        margin-right: 5px;
+
+        &:visited {
+          text-decoration: none;
+          color: vars.$white;
+        }
+        &:hover {
+          background: vars.$black;
+        }
+      }
+      a.nav-active {
+        background: vars.$color-1;
+
+        &:hover {
+          background: vars.$black;
+        }
+      }
+    }
+  }
+}

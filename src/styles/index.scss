@@ -9,25 +9,7 @@
   src: url(../assets/fonts/Dongle-Light.ttf);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: vars.$font-1;
-}
 
-body {
-  background: vars.$color-2;
-  color: vars.$white;
-}
-li {
-  list-style: none;
-}
-.result {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
 /* 
   // or you can import your own font
   @font-face {

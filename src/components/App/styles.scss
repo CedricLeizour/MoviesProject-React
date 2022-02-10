@@ -1,4 +1,26 @@
-.app {
+@use 'src/styles/vars';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: vars.$font-1;
+}
+
+body {
+  background: vars.$color-2;
+  color: vars.$white;
+}
+li {
+  list-style: none;
+}
+.result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* .app {
   width: 500px;
   margin: 1em auto;
   text-align: center;
@@ -6,5 +28,4 @@
 
 .app img {
   max-width: 150px;
-}
-
+} */

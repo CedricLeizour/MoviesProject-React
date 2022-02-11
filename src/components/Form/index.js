@@ -6,7 +6,6 @@ import Card from '../Card';
 import './styles.scss';
 
 const Form = () => {
-
   const [moviesData, setMoviesData] = useState([]);
   useEffect(() => {
     axios

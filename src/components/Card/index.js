@@ -97,7 +97,7 @@ const Card = ({ movie }) => {
       {movie.overview ? <h3>Synopsis</h3> : ""}
       <p>{movie.overview}</p>
 
-      <div className="btn">Ajouter aux favoris</div>
+      <div className="btn" >Ajouter aux favoris</div>
     </div>
   );
 };

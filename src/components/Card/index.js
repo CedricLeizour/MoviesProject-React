@@ -82,13 +82,24 @@ const Card = ({ movie }) => {
     return genreArray.map((genre) => <li key={genre}>{genre}</li>);
   };
 
+  const addStorage = () => {
+    let storedData = window.localStorage.movies
+      ? window.localStorage.movies.split(",")
+      : [];
+
+    if (!storedData.includes(movie.id.toString())) {
+      storedData.push(movie.id);
+      window.localStorage.movies = storedData;
+    }
+  };
+
   return (
     <div className='card'>
       <img src={movie.poster_path 
       ? "https://image.tmdb.org/t/p/w500" + movie.poster_path
       :  Poster
-    } 
-    alt="affiche du film" 
+      } 
+        alt="affiche du film"
     />
       <h2>{movie.title}</h2>
       {movie.release_date ? <h5> Date de sortie : {dateFormater(movie.release_date)}</h5> : ""}
@@ -97,7 +108,7 @@ const Card = ({ movie }) => {
       {movie.overview ? <h3>Synopsis</h3> : ""}
       <p>{movie.overview}</p>
 
-      <div className="btn" >Ajouter aux favoris</div>
+      <div className="btn" onClick={() => addStorage()}>Ajouter aux favoris</div>
     </div>
   );
 };

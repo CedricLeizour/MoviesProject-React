@@ -7,8 +7,8 @@ import './styles.scss';
 
 const Form = () => {
   const [moviesData, setMoviesData] = useState([]);
-  const [search, setSearch] = useState('star');
-  const [sortRating, setSortRating] = useState('badToGood');
+  const [search, setSearch] = useState('hello');
+  const [sortRating, setSortRating] = useState(null);
   useEffect(() => {
     axios
       .get(
@@ -26,7 +26,7 @@ const Form = () => {
             id="search-input"
             onChange={(event) => setSearch(event.target.value)}
           />
-          <input type="submit" value="Rechercher" />
+         {/*  <input type="submit" value="Rechercher" /> */}
         </form>
         <div className="btn-sort-container">
           <div className="btn-sort" id="goodToBad" onClick={() => setSortRating('goodToBad')}>

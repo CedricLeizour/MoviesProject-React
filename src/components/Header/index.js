@@ -21,7 +21,7 @@ const Header = () => (
         </NavLink>
       </ul>
     </nav>
-    <h1>React Movies</h1>
+    <h1>What Movie Watching ?</h1>
   </div>
 );
 

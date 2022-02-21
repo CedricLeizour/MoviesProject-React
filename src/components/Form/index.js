@@ -13,7 +13,8 @@ const Form = () => {
     axios
       .get(
         `https://api.themoviedb.org/3/search/movie?api_key=1c7bacd2276cb4fe1a9f30056ba28695&query=${search}&language=fr-FR`,
-      ).then((res) => setMoviesData(res.data.results));
+      )
+      .then((res) => setMoviesData(res.data.results));
   }, [search]);
 
   return (
@@ -26,13 +27,21 @@ const Form = () => {
             id="search-input"
             onChange={(event) => setSearch(event.target.value)}
           />
-         {/*  <input type="submit" value="Rechercher" /> */}
+          {/*  <input type="submit" value="Rechercher" /> */}
         </form>
         <div className="btn-sort-container">
-          <div className="btn-sort" id="goodToBad" onClick={() => setSortRating('goodToBad')}>
+          <div
+            className="btn-sort"
+            id="goodToBad"
+            onClick={() => setSortRating('goodToBad')}
+          >
             Top<span>→</span>
           </div>
-          <div className="btn-sort" id="badToGood" onClick={() => setSortRating('badToGood')}>
+          <div
+            className="btn-sort"
+            id="badToGood"
+            onClick={() => setSortRating('badToGood')}
+          >
             Flop<span>→</span>
           </div>
         </div>
@@ -43,13 +52,15 @@ const Form = () => {
           .sort((a, b) => {
             if (sortRating === 'goodToBad') {
               return b.vote_average - a.vote_average;
-            } else if (sortRating === "badToGood") {
+            }
+            if (sortRating === 'badToGood') {
               return a.vote_average - b.vote_average;
             }
           })
           .map((movie) => (
             <Card key={movie.id} movie={movie} />
-          ))};
+          ))}
+        ;
       </div>
     </div>
   );

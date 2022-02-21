@@ -5,14 +5,12 @@ import Form from '../Form';
 // == Import
 import './styles.scss';
 
-const Home = () => {
-  return (
-    <div className="home-page">
+const Home = () => (
+  <div className="home-page">
     <Header />
     <Form />
-      Home
-    </div>
-  );
-};
+
+  </div>
+);
 
 export default Home;

@@ -4,7 +4,7 @@ import Poster from '../../assets/images/poster.jpg';
 // == Import
 import './styles.scss';
 
-const Card = ({ movie }) => {
+const Card = ({ movie, removeItemFromList }) => {
   const dateFormater = (date) => {
     const [yy, mm, dd] = date.split('-');
     return [dd, mm, yy].join('/');
@@ -92,6 +92,15 @@ const Card = ({ movie }) => {
     }
   };
 
+  const deleteStorage = () => {
+    const storedData = window.localStorage.movies.split(',');
+
+    const newData = storedData.filter((id) => id !== movie.id.toString());
+
+    window.localStorage.movies = newData;
+    removeItemFromList(movie);
+  };
+
   return (
     <div className="card">
       <img
@@ -121,10 +130,13 @@ const Card = ({ movie }) => {
       </ul>
       {movie.overview ? <h3>Synopsis</h3> : ''}
       <p>{movie.overview}</p>
-
-      <div className="btn" onClick={() => addStorage()}>
-        Ajouter aux favoris
-      </div>
+      {movie.genre_ids ? (
+        <div className="btn" onClick={() => addStorage()}>
+          Ajouter aux favoris
+        </div>
+      ) : (
+        <div className="btn" onClick={() => deleteStorage()}>Retirer de la liste</div>
+      )}
     </div>
   );
 };

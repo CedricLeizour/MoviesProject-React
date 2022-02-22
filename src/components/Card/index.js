@@ -112,6 +112,13 @@ const Card = ({ movie, removeMovieFromFavorites }) => {
         }
         alt="affiche du film"
       />
+      {movie.genre_ids ? (
+        <div className="btn" onClick={() => addStorage()}>
+          Ajouter aux favoris
+        </div>
+      ) : (
+        <div className="btn" onClick={() => deleteStorage()}>Retirer de la liste</div>
+      )}
       <h2>{movie.title}</h2>
       {movie.release_date ? (
         <h5> Date de sortie : {dateFormater(movie.release_date)}</h5>
@@ -131,13 +138,6 @@ const Card = ({ movie, removeMovieFromFavorites }) => {
       </ul>
       {movie.overview ? <h3>Synopsis</h3> : ''}
       <p>{movie.overview}</p>
-      {movie.genre_ids ? (
-        <div className="btn" onClick={() => addStorage()}>
-          Ajouter aux favoris
-        </div>
-      ) : (
-        <div className="btn" onClick={() => deleteStorage()}>Retirer de la liste</div>
-      )}
     </div>
   );
 };

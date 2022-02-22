@@ -7,8 +7,12 @@ import './styles.scss';
 
 const Form = () => {
   const [moviesData, setMoviesData] = useState([]);
-  const [search, setSearch] = useState('Batman');
+  const [search, setSearch] = useState('');
   const [sortRating, setSortRating] = useState(null);
+  const dontRefresh = (event) => {
+    event.preventDefault();
+  };
+
   useEffect(() => {
     axios
       .get(
@@ -20,14 +24,13 @@ const Form = () => {
   return (
     <div className="form-component">
       <div className="form-container">
-        <form>
+        <form onSubmit={dontRefresh}>
           <input
             type="text"
             placeholder="Entrer le titre d'un film"
             id="search-input"
             onChange={(event) => setSearch(event.target.value)}
           />
-          {/*  <input type="submit" value="Rechercher" /> */}
         </form>
         <div className="btn-sort-container">
           <div

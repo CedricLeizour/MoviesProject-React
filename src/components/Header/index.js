@@ -23,7 +23,7 @@ const Header = () => (
         </NavLink>
       </ul>
     </nav>
-    <h1>What Movie Watching ?</h1>
+    <h1>What To Watch ?</h1>
   </div>
 );
 

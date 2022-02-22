@@ -6,16 +6,14 @@ import UserList from '../UserList';
 // == Import
 import './styles.scss';
 
-const App = () => {
-return (
-  <div className='app'>
+const App = () => (
+  <div className="app">
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/coup-de-coeur" element={<UserList />} />
       <Route path="*" element={<Home />} />
     </Routes>
   </div>
-  )
-};
+);
 
 export default App;

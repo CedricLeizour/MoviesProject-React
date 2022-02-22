@@ -1,26 +1,44 @@
 @use 'src/styles/vars';
 
 .header {
+
+  
+ 
   h1 {
-    font-size: 3.3rem;
+    font-size: 1.8rem;
     text-shadow: 2px 3px 0px vars.$color-1;
     text-align: center;
     letter-spacing: 2px;
+    font-family: vars.$font-3;
+    padding: 0.5rem;
+
+    @media screen and (max-width:768px) { 
+    font-size: 1rem;
+    }
+  
   }
   nav {
     position: absolute;
     top: 16px;
     left: 16px;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    @media screen and (max-width:768px) { 
+      font-size: 1em;
+      width: 100px;
+      top: 36px;
+      left: 16px;
+
+      }
 
     ul {
       display: flex;
+      
 
       a {
         text-decoration: none;
         color: vars.$white;
         border-radius: 10px;
-        width: 102px;
+        width: 90px;
         text-align: center;
         margin-right: 5px;
 

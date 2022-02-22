@@ -24,7 +24,7 @@
   }
 
   img {
-    width: 70%;
+    width: 75%;
     height: 254px;
     object-fit: cover;
     object-position: top;
@@ -38,6 +38,7 @@
     margin: 24px 0 0px;
     letter-spacing: 1px;
     line-height: 20px;
+    font-size: 1.8rem;
   }
   h5 {
     color: vars.$color-3;
@@ -77,8 +78,8 @@
   }
   p {
     color: vars.$color-3;
-    font-size: 1.3rem;
-    line-height: 20px;
+    font-size: 1.2rem;
+    line-height: 18px;
     height: 160px;
     overflow-y: scroll;
 
@@ -92,7 +93,7 @@
     bottom: 16px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 8px 0;
+    padding: 2px;
     width: 150px;
     text-align: center;
     border-radius: 15px;
@@ -103,7 +104,7 @@
     font-size: 20px;
 
     &:hover {
-      background: #212040;
+      background: transparent;/* #212040; */
       box-shadow: 0 0 10px #546ee4d2;
       font-size: 1.025rem;
     }

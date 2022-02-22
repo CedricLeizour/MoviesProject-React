@@ -7,7 +7,7 @@ import './styles.scss';
 
 const Form = () => {
   const [moviesData, setMoviesData] = useState([]);
-  const [search, setSearch] = useState('hello');
+  const [search, setSearch] = useState('Batman');
   const [sortRating, setSortRating] = useState(null);
   useEffect(() => {
     axios
@@ -48,7 +48,7 @@ const Form = () => {
       </div>
       <div className="result">
         {moviesData
-          .slice(0, 12)
+          .slice(0, 24)
           .sort((a, b) => {
             if (sortRating === 'goodToBad') {
               return b.vote_average - a.vote_average;
@@ -60,7 +60,6 @@ const Form = () => {
           .map((movie) => (
             <Card key={movie.id} movie={movie} />
           ))}
-        ;
       </div>
     </div>
   );

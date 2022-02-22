@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Poster from '../../assets/images/poster.jpg';
 
 // == Import
 import './styles.scss';
 
-const Card = ({ movie, removeItemFromList }) => {
+const Card = ({ movie, removeMovieFromFavorites }) => {
   const dateFormater = (date) => {
     const [yy, mm, dd] = date.split('-');
     return [dd, mm, yy].join('/');
@@ -98,7 +99,7 @@ const Card = ({ movie, removeItemFromList }) => {
     const newData = storedData.filter((id) => id !== movie.id.toString());
 
     window.localStorage.movies = newData;
-    removeItemFromList(movie);
+    removeMovieFromFavorites(movie);
   };
 
   return (
@@ -139,6 +140,11 @@ const Card = ({ movie, removeItemFromList }) => {
       )}
     </div>
   );
+};
+
+Card.propTypes = {
+  movie: PropTypes.array.isRequired,
+  removeMovieFromFavorites: PropTypes.func.isRequired,
 };
 
 export default Card;

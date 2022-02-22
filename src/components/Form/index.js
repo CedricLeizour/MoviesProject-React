@@ -7,7 +7,7 @@ import './styles.scss';
 
 const Form = () => {
   const [moviesData, setMoviesData] = useState([]);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState('batman');
   const [sortRating, setSortRating] = useState(null);
   const dontRefresh = (event) => {
     event.preventDefault();

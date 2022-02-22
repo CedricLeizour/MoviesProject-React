@@ -68,13 +68,13 @@
     }
     #goodToBad,
     #badToGood {
-      background: vars.$color-1;
+      background: #060d2c;
       width: 110px;
       transition: 0.3s;
       position: relative;
 
       &:hover {
-        background: vars.$black;
+        background: vars.$color-1;
       }
     }
     #goodToBad span {

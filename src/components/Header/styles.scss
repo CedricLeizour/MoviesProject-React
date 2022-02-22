@@ -6,7 +6,7 @@
  
   h1 {
     font-size: 1.8rem;
-    text-shadow: 2px 3px 0px vars.$color-1;
+    text-shadow: 4px 4px 2px #060d2c;
     text-align: center;
     letter-spacing: 2px;
     font-family: vars.$font-3;
@@ -47,11 +47,11 @@
           color: vars.$white;
         }
         &:hover {
-          background: vars.$black;
+          background: vars.$color-1;
         }
       }
       a.nav-active {
-        background: vars.$color-1;
+        background: #060d2c;
 
         &:hover {
           background: vars.$black;

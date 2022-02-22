@@ -50,19 +50,21 @@ const Form = () => {
         </div>
       </div>
       <div className="result">
-        {moviesData
-          .slice(0, 24)
-          .sort((a, b) => {
-            if (sortRating === 'goodToBad') {
-              return b.vote_average - a.vote_average;
-            }
-            if (sortRating === 'badToGood') {
-              return a.vote_average - b.vote_average;
-            }
-          })
-          .map((movie) => (
-            <Card key={movie.id} movie={movie} />
-          ))}
+        {moviesData.length > 0
+          ? (moviesData
+            .slice(0, 24)
+            .sort((a, b) => {
+              if (sortRating === 'goodToBad') {
+                return b.vote_average - a.vote_average;
+              }
+              if (sortRating === 'badToGood') {
+                return a.vote_average - b.vote_average;
+              }
+            })
+            .map((movie) => (
+              <Card key={movie.id} movie={movie} />
+            )))
+          : <h2>Aucun résultat ne correspond à votre recherche 😟</h2>}
       </div>
     </div>
   );
